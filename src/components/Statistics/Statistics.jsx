@@ -1,5 +1,6 @@
 import React from 'react';
 import { Item, List } from './Statistics.styled';
+import { PropTypes } from 'prop-types';
 
 export const Statistics = ({
   good,
@@ -9,7 +10,7 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <List style={{ listStyle: 'none', padding: 0 }}>
+    <List>
       <Item>
         <span>Good:</span>
         <span>{good}</span>
@@ -32,4 +33,12 @@ export const Statistics = ({
       </Item>
     </List>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };

@@ -56,7 +56,7 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-    const prpops = { good, neutral, bad };
+
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
@@ -64,7 +64,7 @@ class App extends Component {
       <Container>
         <Section title="Please leave feedback" level={1}>
           <FeedbackOptions
-            options={prpops}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleClick}
           ></FeedbackOptions>
         </Section>
